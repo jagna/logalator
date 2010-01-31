@@ -2,7 +2,7 @@ require 'rubygems'
 require 'dm-core'
 require 'model/request'
 
-DataMapper.setup(:default, 'postgres://ARGV[1]:ARGV[2]@localhost/logizator')
+DataMapper.setup(:default, "postgres://#{ARGV[1]}:#{ARGV[2]}@localhost/logizator")
 DataMapper.auto_upgrade!
 
 if ARGV[0].nil? || !File.directory?(ARGV[0])
@@ -15,7 +15,7 @@ line_re = /^(([\d\.])+)(\s\S+){2}\s\[(.*?)\]\s"((\S+)\s(\S+)\s(\S+))"\s(\d+|-)\s
 File.open('ignored_agents.txt').each_line { |r| @robots << Regexp.new(r.strip) unless "#" == r[0]}
 
 def robot?(agent)
-    @robots.any { |robot| agent =~ robot }
+    @robots.any? { |robot| agent =~ robot }
 end
 
 done = File.open(File.join(ARGV[0], 'done_logs.txt'), "w+")
@@ -24,7 +24,6 @@ Dir.foreach(ARGV[0]) do |f|
    next if !File.file?(path) && File.directory?(path) 
    i=0
    File.open(path, "r").each do |l|
-       i = i+1
        el = l.match(line_re)
        time = DateTime::parse("#{el[4]}".sub(/:/, ' ')) 
        u = User.first_or_create( :ip => el[1],:agent => el[12], :robot => robot?(el[12]) )
@@ -34,6 +33,7 @@ Dir.foreach(ARGV[0]) do |f|
            print "\r#{f} #{i}"
            STDOUT.flush
        end
+       i = i+1
    end
    puts
    done.puts("#{path} lines: #{i}")
