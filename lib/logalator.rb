@@ -22,8 +22,9 @@ done = File.open(File.join(ARGV[0], 'done_logs.txt'), "w+")
 Dir.foreach(ARGV[0]) do |f|
    path = File.join(ARGV[0], f)
    next if !File.file?(path) && File.directory?(path) 
-   i=0
-   File.open(path, "r").each do |l|
+   Request.transaction do |t|
+    i=0
+    File.open(path, "r").each do |l|
        el = l.match(line_re)
        time = DateTime::parse("#{el[4]}".sub(/:/, ' ')) 
        u = User.first_or_create( :ip => el[1],:agent => el[12], :robot => robot?(el[12]) )
@@ -34,8 +35,9 @@ Dir.foreach(ARGV[0]) do |f|
            STDOUT.flush
        end
        i = i+1
-   end
-   puts
-   done.puts("#{path} lines: #{i}")
+    end #file
+    puts
+    done.puts("#{path} lines: #{i}")
+   end #transaction
 end
 done.close
