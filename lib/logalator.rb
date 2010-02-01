@@ -2,7 +2,7 @@ require 'rubygems'
 require 'dm-core'
 require 'model/request'
 
-DataMapper.setup(:default, "postgres://#{ARGV[1]}:#{ARGV[2]}@localhost/logizator")
+DataMapper.setup(:default, "postgres://#{ARGV[1]}:#{ARGV[2]}@localhost/#{ARGV[3]}")
 DataMapper.auto_upgrade!
 
 if ARGV[0].nil? || !File.directory?(ARGV[0])
@@ -30,7 +30,7 @@ Dir.foreach(ARGV[0]) do |f|
        u = User.first_or_create( :ip => el[1],:agent => el[12], :robot => robot?(el[12]) )
        h = Header.first_or_create( :method => el[6], :path => el[7], :protocol => el[8], :status => el[9], :bytes => el[10] )
        r = Request.create( :nr => i, :referrer => el[11], :date => time, :user => u, :header => h)
-       if i % 25000 == 0
+       if i % 10000 == 0
            print "\r#{f} #{i}"
            STDOUT.flush
        end
