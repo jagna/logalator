@@ -1,3 +1,4 @@
+#.*([Hh]arvester|[Bb]ot|[Cc]rawler).*
 .*[Gg]ooglebot/[0-9]\.[0-9].*
 .*Yahoo! Slurp.*
 .*holmes/[0-9]\.[0-9].*
@@ -14,7 +15,8 @@
 .*Mozilla/5\.0 \(Twiceler-0\.9 http://www\.cuill\.com/twiceler/robot\.html\).*
 .*Python-urllib/[0-9]+\.[0-9]+.*
 .*TurnitinBot/2\.1 \(http://www\.turnitin\.com/robot/crawlerinfo\.html\).*
-.*Yeti/1\.0 \(\+http://help\.naver\.com/robots/\).*
+.*Java/[0-9]+\.[0-9]+\.[0-9]+_[0-9]+.*
+.*Yeti/1\.0 \((NHN Corp.;)* http://help\.naver\.com/robots/\).*
 .*Jakarta Commons-HttpClient/[0-9]+\.[0-9]+.*
 .*Speedy Spider \(http://www\.entireweb\.com/about/search_tech/speedy_spider/\).*
 .*FDM 2\.x.*
@@ -26,39 +28,44 @@
 .*gnu-classpath/0\.92 \(CACAO/0\.97\).*
 .*ia_archiver.*
 .*[gG]ooglebot-Image/[0-9]\.[0-9].*
-.*Feedfetcher-Google; \(+http://www\.google\.com/feedfetcher\.html\).*
+.*Feedfetcher-Google.*
+.*ichiro/[0-9]\.[0-9].*
 .*MSNBOT_Mobile.*
 .*DotBot/[0-9]\.[0-9]\.[0-9] \(http://www\.dotnetdotcom\.org/#info, crawler@dotnetdotcom\.org\).*
-UNKNOWN 
 .*OAIHarvester/[0-9]\.[0-9].*
-.*libwww-perl/[0-9]\.[0-9]+.* 
-.*PKPHarvester/[0-9]\.x.* 
-.*Wget/[0-9]\.[0-9]+\.[0-9].* 
+.*OAI Harvester/[0-9]\.[0-9]; FS Consulting, Inc\..*
+.*libwww-perl/[0-9]\.[0-9]+.*
+.*PKPHarvester/[0-9]\.x.*
+.*Wget/[0-9]\.[0-9]+\.[0-9].*
 .*http://Anonymouse\.org/.*
 .*Yandex/[0-9]+\.[0-9]+\.[0-9]+.*
 .*StackRambler/*
 .*WordPress.*
-lms 
+.*lms.*
 .*Jyxobot/.*
 .*Microsoft Office Protocol Discovery.*
 .*CFSCHEDULE.*
 .*OAIGet-[0-9]+\.[0-9]+.*
 .*LinkScan/[0-9]+\.[0-9]+b Windows.*
 .*Snapbot/[0-9]+\.[0-9]+\s+\(Snap\s+Shots, +http://www\.snap\.com\).*
-.*GrubNG.* 
-.*LinkLint-checkonly/[0-9]\.[0-9]\.[0-9]+ 
+.*GrubNG.*
+.*LinkLint-checkonly/[0-9]\.[0-9]\.[0-9]+
 .*CazoodleBot/[0-9]+\.[0-9]+\.[0-9]+.*
 .*DataCha0s/[0-9]+\.[0-9]+.*
 .*Eurobot/[0-9]+\.[0-9]+ \(http://eurobot\.ayell\.eu\).*
 .*DA [0-9]+\.[0-9]+.*
 .*Gaisbot/[0-9]+\.[0-9]+
-.*EZBLinkcheck/[0-9]+\.[0-9]+.* 
-.*alef/[0-9]+\.[0-9]+.* 
+.*EZBLinkcheck/[0-9]+\.[0-9]+.*
+.*alef/[0-9]+\.[0-9]+.*
 .*Microsoft Data Access Internet Publishing Provider Cache Manager.*
-.*C Sharp OAI Harvester.* 
-.*ELinks/[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+.2etch1\-debian.*
-.*GetRight/[0-9]+\.[0-9]+.* 
-.*JNLP/[0-9]+\.[0-9]+\.[0-9]+.*  	 
+.*C Sharp OAI Harvester.*
+.*GetRight/[0-9]+\.[0-9]+.*
+.*JNLP/[0-9]+\.[0-9]+\.[0-9]+.*
 .*LinkScan Enterprise/[0-9]+\.[0-9]+b Windows.*
 .*MLBot \(www\.metadatalabs\.com/mlbot\).*
-Feedfetcher-Google;.*
+.*Celestial/[0-9]\.[0-9]*.*
+.*kalooga/KaloogaBot.*
+.*Exabot/[0-9]+\.[0-9]+;.*
+.*Gigabot/[0-9]+\.[0-9]+.*
+.*WebCrawler.*
+.*Download Master.*
