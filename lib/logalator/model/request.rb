@@ -2,6 +2,7 @@ class User
     include DataMapper::Resource
 
     has n, :requests
+    has n, :session_items
 
     property :id, Serial
     property :ip, String

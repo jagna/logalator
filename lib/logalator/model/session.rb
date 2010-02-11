@@ -34,4 +34,10 @@ class SessionItem
     property :referrer, String, :length => 4000
     property :date, DateTime, :index => true
     property :nr, Integer
-end
+
+    def same_session?(other) 
+        return true if other.nil?
+        (other.date.to_time.to_i - date.to_time.to_i).abs <= 30*60
+    end
+
+  end
