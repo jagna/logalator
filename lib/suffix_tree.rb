@@ -34,8 +34,8 @@ require 'pp'
         "suffix tree build:\n#{@sf.to_s}"
       end
 
-      def to_s_sort
-        @sf.to_s_sort
+      def to_s_sort file=STDOUT
+        @sf.to_s_sort file
       end
     end
     
@@ -63,11 +63,11 @@ require 'pp'
         sf_string
       end
 
-      def to_s_sort
+      def to_s_sort file=STDOUT
           count_path = {}
           substring(count_path, [], @sf)
           count_path.sort { |a,b| if b[1].eql? a[1] then b[0].size <=> a[0].size else b[1] <=> a[1] end }.each do |k,v|
-              puts "count: #{v} path: #{k}"
+              file.puts "count: #{v} path: #{k}"
           end
       end
       

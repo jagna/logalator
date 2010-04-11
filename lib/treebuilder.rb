@@ -44,5 +44,7 @@ Session.all.each do |s|
     end
     paths.each { |l| @stb << l; }
 end
-@stb.to_s_sort
+file = File.open("sub_paths_repetition_#{ARGV[2]}.txt", "w")
+@stb.to_s_sort file
+file.close unless file.closed?
 @pb.finish
